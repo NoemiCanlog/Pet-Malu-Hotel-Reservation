@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="./styles/styles.css">
@@ -39,7 +38,7 @@
 		<center><img class="pic" src="./images/nays.jpeg">
 		<h1>PET MALU HOTEL</h1>
 		<p>"One of the best Hotel here in Davao " is here to give you a relaxing and pleasurable stay with us together with the ever vivid Davaoenos here in…..Davao City. <br>
- 		 <a href="reservation.php">
+                    <a href="log_in.php">
                     	<div class="portfolio-text-button">CLICK FOR RESERVATION</div>
                     	</a>
    		
@@ -72,47 +71,47 @@
 		<div class="wrap">
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/1.jpg">
+					<img src="./images/1.JPG">
 				</div>
 			</div>
 				<div class="container">
 					<div class="inContainer">
-						<img src="./images/2.jpg">
+						<img src="./images/2.JPG">
 					</div>
 				</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/3.jpg">
+					<img src="./images/3.JPG">
 				</div>
 			</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/4.jpg">
+					<img src="./images/4.JPG">
 				</div>
 			</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/5.jpg">
+					<img src="./images/5.JPG">
 				</div>
 			</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/6.jpg">
+					<img src="./images/6.JPG">
 				</div>
 			</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/7.jpg">
+					<img src="./images/7.JPG">
 				</div>
 			</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/8.jpg">
+					<img src="./images/8.JPG">
 				</div>
 			</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/9.jpg">
+					<img src="./images/9.JPG">
 				</div>
 			</div>	
 		</div>
@@ -126,26 +125,26 @@
 				<p><b>&nbspTriple Sharing</b><br/>
 				&nbspOur Superior Rooms are furnished with either two or three single beds. These rooms are additionally equipped with an individually controlled air-conditioning, television set with more than 70-channel cable, large mirrors in the room and bathroom, hot and cold shower as well as wired and wireless internet access.
  </b><br/>
-				<b>&Rate : Php 1,500.00</b></p>
+				<b>&Rate : Php 2,500.00</b></p>
 			</div>
 			<div class="ex col-3">
 				<img src="./images/ba.png">
 				<h3>Deluxe Room</h3>
 				<p><b>&nbspTwin sharing</b><br/>
 				&nbspOur Deluxe Rooms are located on the second floor of the hotel and is furnished with two single beds. It is equipped with a television set with more than 70-channel cable, large mirrors in the room and bathroom, hot and cold shower and has complimentary wifi internet access.</p>
-				<b>&Rate : Php 1,300.00</b></p>
+				<b>&Rate : Php 2,000.00</b></p>
 			</div>
 			<div class="ex col-3">
 				<img src="./images/c.png">
 				<h3>Standard Double Room</h3>
 				<p><b>&nbspThis room category is available in two set ups. The first is furnished with two single beds while the other has one queen size bed . This is a bigger room with comfort room, televion set and a wifi ready access.</b><br/></p>
-				<b>Rate : Php 1,100.00</b></p>
+				<b>Rate : Php 1,500.00</b></p>
 			</div>
 			<div class="ex col-3">
 				<img src="./images/d.png">
 				<h3>Standard Single Room</h3>
 				<p><b>&nbspThis room furnished with single bed and are additionally equipped with an individually controlled air-conditioning, television set with more than 70-channel cable, large mirrors in the room and bathroom, hot and cold shower as well as wired and wireless internet access.</b><br/>
-					<b>Rate : Php 950.00</b></p>
+					<b>Rate : Php 1,000.00</b></p>
 				
 			</div>
 	</div>
@@ -160,7 +159,7 @@
 		</div>
 		<div class="foot col-4">
 			<span class="contact">CONTACT</span>
-			<p>Should you require any assistance please do not hesitate to contact the hotel’s Duty Manager on:  + ( 63 82) 221 0888 or am.dvo@marcopolohotels.com. </p>
+			<p>Should you require any assistance please do not hesitate to contact the hotel’s Duty Manager on:  + ( 63 82) 221 0888 or am.dvo@petmaluhotels.com. </p>
 			<div class="feet2">
 				
 				<h3 class="feet2"><b>TEL:</b><br/> (63 12) 221-0444</h3>

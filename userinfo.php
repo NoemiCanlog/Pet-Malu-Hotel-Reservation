@@ -1,13 +1,51 @@
-
+<?php
+     connect_to_database('localhost','root','','pet_malu_hotel_reservation',true);
+    //Connect to Database//
+    $conn=null;
+    function connect_to_database($host_name,$user_name,$pass,$db_name,$open_db){
+        $conn = mysqli_connect($host_name,$user_name,$pass,$db_name);
+        if($open_db==true){
+            
+            if(mysqli_errno($conn)){
+                die("Could not connnect to database. <br/>");
+            }else{
+              //  echo "connected to database";
+                return $conn;
+            }
+        }else{
+            echo "Database Closed <br/>";
+            mysqli_close($conn);
+        }
+    }
+    //Crud Operation
+    // C = add
+    function add_to($table,$columns,$values){
+        
+        $conn=connect_to_database('localhost','root','','pet_malu_hotel_reservation',true);
+        $query='insert into '.$table.' ';
+        $query.='('.$columns.') ';
+        $query.='values ';
+        $query.='('.$values.')';
+        echo $query.'<br>';
+        $result=mysqli_query($conn,$query);
+        if(!$result){
+            return FALSE;
+        }
+        //4. Release Data From Result
+        //mysqli_free_result($result);
+        //5. Close Connection
+        mysqli_close($conn);
+        return TRUE;
+    }
+    
+?>
 <html >
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+<link rel="stylesheet" type="text/css" href="./styles/newuser.css">
 <title>registration form</title>
 <script language="JavaScript">
-
-
-
 function RePasswordValidataion(sPassword,sRePassword)
 {
 	if(sPassword.toString()!=sRePassword.toString())
@@ -18,35 +56,14 @@ function RePasswordValidataion(sPassword,sRePassword)
 	else{return true;}
 }
 </script>
-<style type="text/css">
-<!--
-body
-{
+<style >
+	body, html{
+    background-color:#34515E;
+   font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 18px;
 
-			margin : 0;
-			padding : 0;
-			background-color: #c2c2c2;
-			font-family : sans-serif; 
-		
 }
-.style3 {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-weight: bold;
-}
-.style4 {
-	font-family: Georgia, "Times New Roman", Times, serif;
-	font-style: italic;
-	color: #ffffff;
-}
-.style6 {font-family: Georgia, "Times New Roman", Times, serif; font-style: italic; color: #ffffff; }
-.style10 {font-size: 5}
--->
 </style>
-
-</head>
-<body>
-
-<script src="./scripts/script.js"></script>
 	
 
 
@@ -62,63 +79,69 @@ body
 		</h3>
 		<nav class="main-nav">
 			<ul>
-				<li><a class="border" href="index.html#">HOME</a></li>
-				<li><a class="border" href="index.html#about">ABOUT US</a></li>
-				<li><a class="border" href="index.html#port">GALLERY</a></li>
-				<li><a class="border" href="index.html#exp">ROOM TYPES</a></li>
-				<li><a class="border" href="index.html#contact">CONTACT US</a></li>
-				<li><a class="border" href="login.php">LOG IN</a></li>
+				
+				<li><a class="border" href="index.php#contact">CONTACT US</a></li>
+				<li><a class="border" href="log_in.php">LOG IN</a></li>
 			</ul>
 		</nav>
 	</div>
 </div>
 
 
-<p align="center">&nbsp;</p>
-<p align="center">&nbsp;</p>
-<TR></tr>
+<div class="container-fluid">
+	 <form action="registration_processing.php" method="post" class="register-form"> 
+      <div class="row">      
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="firstName">USERNAME<br></label>
+               <input name="u_name" class="form-control" type="text">    
+           </div>            
+      </div>
 
-<br />
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="password">PASSWORD<br></label>
+               <input name="u_pass" class="form-control" type="password">             
+           </div>            
+      </div>
 
-<table  class = "table" align="center" width="380" border="3" cellspacing="1" cellpadding="1">
-<tr>
-	<td><span class="style1"><strong>Enter user name:</strong></span> </td>
-    <td width="380"><input type="text" name="username"/></td>
-  </tr>
-  <tr>
-    <td><span class="style1"><strong>Enter password:</strong></span></td>
-    <td><input type="password" name="pwd" maxlength="8" /></td>
-  </tr>
-  <tr>
-    <td><span class="style1"><strong>Confirm password:</strong></span></td>
-    <td><input type="password" name="password" maxlength="8" onchange="return RePasswordValidataion(document.userinfo.pwd.value,document.userinfo.password.value)"/></td>
-  </tr>
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="password">RE-ENTER <br></label>
+               <input name="u_pass1" class="form-control" type="password" onchange="return RePasswordValidataion(document.userinfo.u_pass.value,document.userinfo.u_pass1.value)">             
+           </div>            
+      </div>
 
-	<tr>
-		<th align=left>Full Name   :</th>
-		<td colspan=4><input type=text name=txtname size=50></td>
-	</tr>
-	<tr>
-		<th align=left>Email   :</th>
-		<td colspan=4><input type="text" name="txtemail" size=50></td>
-	</tr>
-	<tr>
-		<th align=left>Company   :</th>
-		<td colspan=4><input type=text name=txtcompany size=50 onkeyPress="validcompany()"></td>
-	</tr>
-	<tr>
-		<th align=left>Telephone   :</th>
-		<td colspan=4><input type="text" name="txtnumber" size=15 ></td>
-	</tr>
-	<tr>
-		<th align=left valign=top>Address   :</th>
-		<td colspan=4><textarea name=txtaddress rows=5 cols=40></textarea></td>
-	</tr>
-</table>
-<br />
+      <div class="row">      
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="firstName">FULLNAME<br></label>
+               <input name="u_fname" class="form-control" type="text" size="50">    
+           </div>            
+      </div>
+
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="email">EMAIL<br></label>
+               <input name="u_email" class="form-control" type="email" size="50">             
+           </div>            
+      </div>
+
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="email">TELEPHONE<br></label>
+               <input name="u_telno" class="form-control" type="text" size="50">             
+           </div>            
+      </div>
+
+      <div class="row">
+           <div class="col-md-4 col-sm-4 col-lg-4">
+              <label for="email">ADDRESS<br></label>
+               <input name="u_addr" class="form-control" type="text" size="50">             
+           </div>            
+      </div>
+      
+      
 
 	<div align="center"><input class="button" type="submit" value="Submit" name="ok" align="right" />
-	<input name="reset" type="reset" value="Cancel"/>
 </div>
 </form>
 </body>
