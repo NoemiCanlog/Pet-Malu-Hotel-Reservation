@@ -52,9 +52,7 @@ html,body{
 }
 
 .pic{
-	width: 100%;
-	margin:0;
-	padding: 0;	
+	display: none;	
 }
 
 .pec{
@@ -182,7 +180,7 @@ p.header{
 
 .ab{
 	float: left;
-	height: 75%;
+	height: 1500%;
 	text-align: center;
 	color: #a2a2a2;
 	font-family: Helvetica;

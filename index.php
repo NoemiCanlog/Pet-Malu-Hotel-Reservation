@@ -1,13 +1,18 @@
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 
 <script src="./scripts/script.js"></script>
+
 	<title>
 		Pet Malu Hotel
 	</title>
 </head>
 <body>
+	
+
 	<button onclick="goToTop()" id="top" title="Go to top"><img src="./images/arrow.png"></button>
 
 	<div id="header-container">
@@ -31,19 +36,44 @@
 	</div>
 
 
+<style>
+.mySlides {display:none;}
+</style>
 
-
-
-	<div id="main" class="clearfix col-12">
-		<center><img class="pic" src="./images/nays.jpeg">
-		<h1>PET MALU HOTEL</h1>
+<div id="main" class="clearfix col-12">
+<div class="w3-content w3-section" style="max-width:100%">
+  <center><img class="mySlides" src="./images/nays.jpeg" style="width:100%">
+  <img class="mySlides" src="./images/bgg.jpg" style="width:100%">
+  <img class="mySlides" src="./images/bggg.jpg" style="width:100%">
+  <img class="mySlides" src="./images/bgggg.jpg" style="width:100%">
+  <h1>PET MALU HOTEL</h1>
 		<p>"One of the best Hotel here in Davao " is here to give you a relaxing and pleasurable stay with us together with the ever vivid Davaoenos here in…..Davao City. <br>
                     <a href="log_in.php">
                     	<div class="portfolio-text-button">CLICK FOR RESERVATION</div>
                     	</a>
    		
-		</center>		
-	</div>
+</center>
+</div>
+<script>
+var myIndex = 0;
+carousel();
+
+function carousel() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+    }
+    myIndex++;
+    if (myIndex > x.length) {myIndex = 1}    
+    x[myIndex-1].style.display = "block";  
+    setTimeout(carousel, 2000); // Change image every 2 seconds
+}
+</script>
+
+
+</div>
+
 	<div id="about" class="clearfix col-12">
 		<center><img class="pec" src="./images/bg.jpg">
 		<span class="header">WHY BOOK WITH US ?</span>
@@ -71,47 +101,47 @@
 		<div class="wrap">
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/1.JPG">
+					<img src="./images/OO.JPG">
 				</div>
 			</div>
 				<div class="container">
 					<div class="inContainer">
-						<img src="./images/2.JPG">
+						<img src="./images/BB.JPG">
 					</div>
 				</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/3.JPG">
+					<img src="./images/CC.JPG">
 				</div>
 			</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/4.JPG">
+					<img src="./images/DD.JPG">
 				</div>
 			</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/5.JPG">
+					<img src="./images/EE.JPG">
 				</div>
 			</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/6.JPG">
+					<img src="./images/SS.JPG">
 				</div>
 			</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/7.JPG">
+					<img src="./images/JJ.JPG">
 				</div>
 			</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/8.JPG">
+					<img src="./images/HH.JPG">
 				</div>
 			</div>
 			<div class="container">
 				<div class="inContainer">
-					<img src="./images/9.JPG">
+					<img src="./images/II.JPG">
 				</div>
 			</div>	
 		</div>
