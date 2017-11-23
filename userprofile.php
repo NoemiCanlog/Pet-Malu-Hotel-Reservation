@@ -105,6 +105,8 @@ session_start();
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+        <link rel="stylesheet" href="./styles/uikit.min.css">
+        <script src="./scripts/uikit.min.js"></script>
         <title></title>
 
         <style>
@@ -131,20 +133,38 @@ session_start();
 
 
         
+                    
+                
         
+            
+        
+        <center>
          <?php
         $cline = return_values("u_id,u_fullname,u_name,u_email,u_tel","users","u_id = ".$_SESSION["userid"]);
-        for($i = 0; $i<sizeof($cline);$i++){    
-         echo '<b>User ID : </b>'.$cline[$i][0].'<br>';
-         echo '<b>Full Name : </b>'.$cline[$i][1].'<br>';
-         echo '<b>Username: </b>'.$cline[$i][2].'<br>';
-         echo '<b>Email: </b>'.$cline[$i][3].'<br>';
-         echo '<b>Contact No. : </b>'.$cline[$i][4].'<br>';
+        for($i = 0; $i<sizeof($cline);$i++){  
+        echo '<div class="uk-card uk-card-default uk-width-1-2@m">
+        <div class="uk-card-header">
+            <div class="uk-grid-small uk-flex-middle" uk-grid>
+                <div class="uk-width-auto">';  
+         
+         echo '</div>
+                <div class="uk-width-expand">
+                    <h3>Hi There! '.$cline[$i][1].'</h3>
+                    <p class="uk-text-meta uk-margin-remove-top">Looking Awesome!</p>
+                </div>
+            </div>
+        </div>';
+         echo '<div class="uk-card-body">';
+         echo '<b>Username: '.$cline[$i][2]. '</b><br>';
+         echo '<b>Email: '.$cline[$i][3].'</b><br>';
+         echo '<b>Contact No. : '.$cline[$i][4]. '</b>';
+         echo '</div></div>';
          }
         // <p name ="logout" style="text-align: right"><a href="logout.php" >Log Out!</a></p>
          ?>
-        <table border = "5" width="70%" align="center" color> 
-                  
+         </center>
+        <table class="uk-table"> 
+                <thead>
              <tr>
                  <td>
                      <b> Full Name</b>
@@ -166,9 +186,11 @@ session_start();
                      <b>ACTIONS</b>
                  </td>
              </tr>
+         </thead>
+         <tbody>
              <?php
              $cline2 = return_values2("users.u_fullname,reservation.r_id,reservation.r_rtype,reservation.r_pmethod,rooms.r_rate,reservation.r_arrivdate,reservation.r_deptdate,reservation.r_payment", "reservation LEFT JOIN rooms ON rooms.r_rtype = reservation.r_rtype LEFT JOIN users ON reservation.u_id = users.u_id ","WHERE reservation.u_id = '".$_SESSION["userid"]."'",1);
-             echo '<p><b>Your Current Reservation(s) : '.sizeof($cline2).'</b></p>'; 
+             echo '<span class="uk-label"><b>Your Current Reservation:'.sizeof($cline2).'</span>'; 
              for($i = 0; $i<sizeof($cline2);$i++){
                   echo '
               <tr>
@@ -189,7 +211,7 @@ session_start();
                  </td><td>
                       P '.$cline2[$i][7].'
                  </td><td>
-                     <a href="userprofile.php?d='.$cline2[$i][1].'&x='.$cline2[$i][2].'">REMOVE</a>
+                     <a class="uk-button uk-button-primary" href="userprofile.php?qq='.$cline2[$i][1].'&x='.$cline2[$i][2].'">REMOVE</a>
                  </td>
              </tr>
                   ';
@@ -201,7 +223,7 @@ session_start();
               }
              
              ?>
-            
+            </tbody>
             <div>
                 
                 
