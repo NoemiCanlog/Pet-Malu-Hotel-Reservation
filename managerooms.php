@@ -87,6 +87,8 @@
         <meta charset="UTF-8">
         <title></title>
         <link rel="stylesheet" type="text/css" href="./styles/styles.css">
+        <link rel="stylesheet" type="text/css" href="./styles/uikit.min.css">
+        <script src="./scripts/uikit.min.js"></script>
     </head>
     <body>
 
@@ -113,12 +115,15 @@
         <style>
             
              tr {background-color: #f2f2f2;}
-             body{ background-color: #576884;}
+             body{ background-color: #576884;
+                height: 1300px;
+             }
                  h1 { color: #ffffb3; 
                      text-align: left;
-                     padding-left: 300px;
+                     
                      font-size: 20px;
                             font-family: Butterfly;
+                     padding-left: 3%;       
                     }
                   h2 {
                     color: #ffffff;
@@ -127,7 +132,7 @@
                     font-family:  Butterfly;
                   }  
         </style>
-            <table border = "5" width="50%" align="center"> 
+            <table class="uk-table"> 
              <tr>
                  <td>
                      <b>Reserved User</b>
@@ -145,7 +150,7 @@
              </tr>
         <?php
              $cline = return_values("users.u_fullname,`Single`.room_id,reservation.r_id,reservation.r_arrivdate,reservation.r_deptdate","reservation LEFT JOIN `Single` ON `Single`.r_id = reservation.r_id LEFT JOIN users ON `Single`.u_id = users.u_id WHERE room_id = reservation.r_rnum");
-             echo 'CURRENT RESERVE COUNT :'.sizeof($cline);
+             echo '<span class="uk-label">CURRENT RESERVE COUNT :'.sizeof($cline).'</span>';
               for($i = 0; $i<sizeof($cline);$i++){ 
                   echo '
               <tr>
@@ -160,7 +165,7 @@
                  </td><td>
                      '.$cline[$i][4].'
                  </td><td>
-                     <a href="managerooms.php?d='.$cline[$i][2].'&x=`Single`">Delete</a>
+                     <a class="uk-button uk-button-primary" href="managerooms.php?qq='.$cline[$i][2].'&x=`Single`">Delete</a>
                  </td>
              </tr>
                   ';
@@ -172,7 +177,7 @@
         
         ?>
              
-            <table border = "5" width="50%" align="center"> 
+            <table class="uk-table"> 
              <tr>
                  <td>
                      <b>Reserved User</b>
@@ -191,7 +196,7 @@
           <h1><b>Double Rooms</b></h1>
         <?php
              $cline = return_values("users.u_fullname,`Double`.room_id,reservation.r_id,reservation.r_arrivdate,reservation.r_deptdate","reservation LEFT JOIN `Double` ON `Double`.r_id = reservation.r_id LEFT JOIN users ON `Double`.u_id = users.u_id WHERE room_id = reservation.r_rnum");
-             echo 'CURRENT RESERVE COUNT :'.sizeof($cline);
+             echo '<span class="uk-label">CURRENT RESERVE COUNT : '.sizeof($cline).'</span>';
               for($i = 0; $i<sizeof($cline);$i++){ 
                   echo '
               <tr>
@@ -206,7 +211,7 @@
                  </td><td>
                      '.$cline[$i][4].'
                  </td><td>
-                     <a href="managerooms.php?d='.$cline[$i][2].'&x=`Double`">Delete</a>
+                     <a class="uk-button uk-button-primary" href="managerooms.php?qq='.$cline[$i][2].'&x=`Double`">Delete</a>
                  </td>
              </tr>
                   ';
@@ -218,7 +223,7 @@
         
         ?>
             
-            <table border = "5" width="50%" align="center"> 
+            <table class="uk-table"> 
              <tr>
                  <td>
                      <b>Reserved User</b>
@@ -237,7 +242,7 @@
           <h1><b>Deluxe Rooms</b></h1>
         <?php
              $cline = return_values("users.u_fullname,`Deluxe`.room_id,reservation.r_id,reservation.r_arrivdate,reservation.r_deptdate","reservation LEFT JOIN `Deluxe` ON `Deluxe`.r_id = reservation.r_id LEFT JOIN users ON `Deluxe`.u_id = users.u_id WHERE room_id = reservation.r_rnum");
-             echo'CURRENT RESERVE COUNT : '.sizeof($cline);
+             echo'<span class="uk-label">CURRENT RESERVE COUNT : '.sizeof($cline).'</span>';
               for($i = 0; $i<sizeof($cline);$i++){ 
                   echo '
               <tr>
@@ -252,7 +257,7 @@
                  </td><td>
                      '.$cline[$i][4].'
                  </td><td>
-                     <a href="managerooms.php?d='.$cline[$i][2].'&x=`Deluxe`">Delete</a>
+                     <a class="uk-button uk-button-primary" href="managerooms.php?qq='.$cline[$i][2].'&x=`Deluxe`">Delete</a>
                  </td>
              </tr>
                   ';
@@ -264,7 +269,7 @@
         
         ?>
             
-            <table border = "5" width="50%" align="center"> 
+            <table class="uk-table"> 
              <tr>
                  <td>
                      <b>Reserved User</b>
@@ -283,7 +288,7 @@
           <h1><b>Premier Rooms</b></h1>
         <?php
              $cline = return_values("users.u_fullname,`Premier`.room_id,reservation.r_id,reservation.r_arrivdate,reservation.r_deptdate","reservation LEFT JOIN `Premier` ON `Premier`.r_id = reservation.r_id LEFT JOIN users ON `Premier`.u_id = users.u_id WHERE room_id = reservation.r_rnum");
-             echo 'CURRENT RESERVE COUNT :'.sizeof($cline);
+             echo '<span class="uk-label">CURRENT RESERVE COUNT : '.sizeof($cline).'</span>';
               for($i = 0; $i<sizeof($cline);$i++){ 
                   echo '
               <tr>
@@ -298,7 +303,7 @@
                  </td><td>
                      '.$cline[$i][4].'
                  </td><td>
-                     <a href="managerooms.php?d='.$cline[$i][2].'&x=`Premier`">Delete</a>
+                     <a class="uk-button uk-button-primary" href="managerooms.php?qq='.$cline[$i][2].'&x=`Premier`">Delete</a>
                  </td>
              </tr>
                   ';
