@@ -86,8 +86,9 @@
 <head>
 	<title> </title>
     <link rel="stylesheet" type="text/css" href="./styles/styles.css">
-
+    <link rel="stylesheet" type="text/css" href="./styles/uikit.min.css">
 	<!--<link rel="stylesheet" type="text/css" href="./styles/style1.css">-->
+    <script src="./scripts/uikit.min.js"></script>
 </head>
 <body>
    
@@ -110,7 +111,9 @@
 
     <style>
         tr {background-color: #f2f2f2;}
-       body{ background-color: #576884;}
+       body{ background-color: #576884;
+                height: 1500px;
+       }
        p { color: #ffffb3; 
             text-align: left;
             font-size: 15px;
@@ -132,7 +135,7 @@
     </style>
 
     <h1><b>MANAGE USER</b></h1>
-            <table border = "5" width="70%" align="center"> 
+            <table class="uk-table"> 
              <tr>
                  <td>
                      <b> User ID</b>
@@ -154,7 +157,7 @@
              </tr>
              <?php
               $cline = return_values("*","users");
-             echo '<p><b>Total USERS :'.sizeof($cline).'</b></p> ';
+             echo '<p><b>TOTAL USERS :'.sizeof($cline).'</b></p> ';
               for($i = 0; $i<sizeof($cline);$i++){ 
                   echo '
               <tr>
@@ -173,7 +176,7 @@
                  </td><td>
                      '.$cline[$i][6].'
                  </td><td>
-                     <a href="admin.php?qq='.$cline[$i][0].'">Delete</a>
+                     <a class="uk-button uk-button-primary" href="admin.php?qq='.$cline[$i][0].'">Delete</a>
                  </td>
              </tr>
                   ';
@@ -183,7 +186,7 @@
                   echo '<meta http-equiv="refresh" content="0; URL=admin.php"><meta name="keywords" content="automatic redirection">';
               }
              ?>     
-             <table border = "5" width="70%" align="center"> 
+             <table class="uk-table"> 
                  <h1><b>MANAGE RESERVATION</b></h1> 
              <tr>
                  <td>
@@ -210,7 +213,7 @@
              </tr>
              <?php
              $cline2 = return_values2("users.u_fullname,reservation.r_id,reservation.r_rnum,reservation.r_rtype,reservation.r_pmethod,rooms.r_rate,reservation.r_arrivdate,reservation.r_deptdate,reservation.r_payment", "reservation LEFT JOIN rooms ON rooms.r_rtype = reservation.r_rtype LEFT JOIN users ON reservation.u_id = users.u_id ","WHERE reservation.r_id IS NOT NULL","");
-             echo '<p><b>Total Reserved Rooms :'.sizeof($cline2).'</b></p>'; 
+             echo '<p><b>TOTAL RESERVED ROOMS : '.sizeof($cline2).'</b></p>'; 
              for($i = 0; $i<sizeof($cline2);$i++){
                   echo '
               <tr>
@@ -233,7 +236,7 @@
                  </td><td>
                       '.$cline2[$i][8].'
                  </td><td>
-                     <a href="admin.php?d='.$cline2[$i][1].'&x='.$cline2[$i][3].'">Delete Record</a>
+                     <a class="uk-button uk-button-primary" href="admin.php?d='.$cline2[$i][1].'&x='.$cline2[$i][3].'">Delete Record</a>
                  </td>
              </tr>
                   ';
