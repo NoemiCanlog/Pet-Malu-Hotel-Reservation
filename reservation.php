@@ -86,7 +86,7 @@ session_start();
       ?>
       <form method = "get">
         <div class="location">
-          <label for="location" >LOCATION </label><br/>
+          <label for="location"><b>LOCATION </b></label><br/>
           <input type="text" name="location" placeholder="Davao City Philippines"<?php echo 'value="'.$_GET["location"].'"';?> ><br/>
         </div>
 
@@ -139,11 +139,11 @@ session_start();
              </div>
           <div class="dates">
           <div class="arrival">
-            <label for="arrival">ARRIVAL</label><br/>
+            <label for="arrival"><b>ARRIVAL</b></label><br/>
             <input name="arrival" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="10/03/2016"/>
           </div>
           <div class="departure">
-            <label for="arrival">DEPARTURE</label><br/>
+            <label for="arrival"><b>DEPARTURE</b></label><br/>
             <input name="departure" type="text" onfocus="(this.type='date')" onblur="(this.type='text')" placeholder="05/11/2016"/>
           </div>
         </div>
